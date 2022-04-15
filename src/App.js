@@ -1,15 +1,13 @@
-import { useEffect, useState } from "react";
-import useTitle from './useTitle'
-
+import useConfirm from "./useConfirm";
 function App() {
-  const titleUpdater = useTitle("Loading...")
-  setTimeout(()=>titleUpdater("Home"),5000)
+  const deleteWord = () => console.log("Deleting Word");
+  const abort = () => console.log("Abort");
+  const confrimDelete = useConfirm("Are you sure?",deleteWord,abort)
   return (
     <div className="App">
-      <h1>HI</h1>
+      <h1 >HI</h1>
+      <button onClick={confrimDelete}>delete</button>
     </div>
   )
-
-
 }
 export default App;
