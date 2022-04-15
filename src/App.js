@@ -1,22 +1,12 @@
-import useTabs from "./useTabs";
-
-const content= [
-  {
-    tab:"Section 1",
-    content: "I'm Section 1"
-  },
-  {
-    tab:"Section 2",
-    content: "I'm Section 2"
-  }
-]
+import { useEffect, useState } from "react";
+import useTitle from './useTitle'
 
 function App() {
-  const {currentItem,changeItems} = useTabs(0,content)
+  const titleUpdater = useTitle("Loading...")
+  setTimeout(()=>titleUpdater("Home"),5000)
   return (
     <div className="App">
-      <div>{currentItem.content}</div>
-      {content.map((section,index)=><button onClick={()=>changeItems(index)} key={index}>{section.tab}</button>)}
+      <h1>HI</h1>
     </div>
   )
 
