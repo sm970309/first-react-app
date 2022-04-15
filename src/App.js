@@ -1,13 +1,11 @@
-import usePreventLeave from "./usePreventLeave";
-
+import useBeforeLeave from './useBeforeLeave'
 
 function App() {
-  const {enableEvent,disableEvent} = usePreventLeave();
+  const onBefore = (()=>window.alert("Don't Leave"));
+  useBeforeLeave(onBefore);
   return (
     <div className="App">
       <h1 >HI</h1>
-      <button onClick={enableEvent}>delete</button>
-      <button onClick={disableEvent}>delete</button>
     </div>
   )
 }
