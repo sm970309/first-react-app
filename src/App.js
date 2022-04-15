@@ -1,12 +1,13 @@
-import useConfirm from "./useConfirm";
+import usePreventLeave from "./usePreventLeave";
+
+
 function App() {
-  const deleteWord = () => console.log("Deleting Word");
-  const abort = () => console.log("Abort");
-  const confrimDelete = useConfirm("Are you sure?",deleteWord,abort)
+  const {enableEvent,disableEvent} = usePreventLeave();
   return (
     <div className="App">
       <h1 >HI</h1>
-      <button onClick={confrimDelete}>delete</button>
+      <button onClick={enableEvent}>delete</button>
+      <button onClick={disableEvent}>delete</button>
     </div>
   )
 }
