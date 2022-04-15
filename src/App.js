@@ -1,11 +1,12 @@
-import useBeforeLeave from './useBeforeLeave'
+import useFadeIn from "./useFadeIn";
 
 function App() {
-  const onBefore = (()=>window.alert("Don't Leave"));
-  useBeforeLeave(onBefore);
+  const fadeInH1 = useFadeIn(3);
+  const fadeInP = useFadeIn(3,1);
   return (
     <div className="App">
-      <h1 >HI</h1>
+      <h1 {...fadeInH1}>HI</h1>
+      <p {...fadeInP}>Nice to meet you</p>
     </div>
   )
 }
