@@ -1,5 +1,4 @@
-import useFadeIn from "./useFadeIn";
-
+import useFadeIn from "./hooks/useFadeIn";
 function App() {
   const fadeInH1 = useFadeIn(3);
   const fadeInP = useFadeIn(3,1);
