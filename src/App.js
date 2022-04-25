@@ -1,9 +1,14 @@
-import useNotification from "./hooks/useNotification";
+import useAxios from "./hooks/useAxios";
 function App() {
-  const triggerNotif = useNotification("Hi",{body:"It's a message"});
+  const { loading, data, refetch } = useAxios({
+    url: "https://yts.mx/api/v2/list_movies.json "
+  })
+  console.log(loading, JSON.stringify(data))
   return (
     <div className="App">
-      <button onClick={triggerNotif}>Click</button>
+      <h1>{loading ? "Loading..." : "OK"}</h1>
+
+      <button onClick={refetch}>refetch</button>
     </div>
   )
 }
